@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 
 public class RemoveDuplicate {
 
@@ -9,8 +10,6 @@ public class RemoveDuplicate {
             return n;
         }
         Arrays.sort(a);
-        // creating another array for only storing
-        // the unique elements
         int[] temp = new int[n];
         int j = 0;
 
@@ -22,22 +21,39 @@ public class RemoveDuplicate {
 
         temp[j++] = a[n - 1];
 
-        // Changing the original array
+
         for (int i = 0; i < j; i++) {
             a[i] = temp[i];
         }
 
         return j;
     }
+    public static void removeDuplicates(int[] a)
+    {
+        LinkedHashSet<Integer> set
+                = new LinkedHashSet<Integer>();
+
+        // adding elements to LinkedHashSet
+        for (int i = 0; i < a.length; i++)
+            set.add(a[i]);
+
+        // Print the elements of LinkedHashSet
+        System.out.print(set);
+    }
     public static void main(String[] args){
-        int a[] = { 5,2,2,6,8,6,7,5,2,8};
-        int n = a.length;
+//        int a[] = { 5,2,2,6,8,6,7,5,2,8};
+//        int n = a.length;
+//
+//        n = removeduplicates(a, n);
+//
+//        // Printing The array elements
+//        for (int i = 0; i < n; i++)
+//            System.out.print(a[i] + " ");
 
-        n = removeduplicates(a, n);
+        int a[] = {5,2,6,8,6,7,5,2,8};
 
-        // Printing The array elements
-        for (int i = 0; i < n; i++)
-            System.out.print(a[i] + " ");
+        // Function call
+        removeDuplicates(a);
 
     }
 }
