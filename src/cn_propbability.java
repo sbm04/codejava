@@ -7,6 +7,7 @@ public class cn_propbability {
         return ans;
     }
 
+
     public static int ncr(int n, int r) {
         int ans = (fact(n) / fact(n - r)) / fact(r);
         return ans;
@@ -28,6 +29,7 @@ public class cn_propbability {
     }
 
     public static void main(String[] args) {
-
+        int c= probability(16, 8);
+        System.out.println(c);
     }
 }

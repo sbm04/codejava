@@ -5,7 +5,9 @@ public class findUniqueInArray {
         int n=arr.length;
         int s=0;
         for(int i=0;i<n;i++){
+            System.out.print("Before "+s + " ");
             s=s^arr[i];
+            System.out.println("After "+s);
         }
         return s;
     }

@@ -14,6 +14,7 @@ class Student{
         return id;
     }
     public String getFname() {
+
         return fname;
     }
     public double getCgpa() {

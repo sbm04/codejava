@@ -11,7 +11,7 @@ public class ArmStrongNumber {
 
         }
         if(result == number)
-            System.out.println(number + " is an Armstrong number.");
+            System.out.println(number + " is an  .");
         else
             System.out.println(number + " is not an Armstrong number.");
     }

@@ -20,4 +20,12 @@ public class findUnique {
         return Integer.MAX_VALUE;
 
     }
+
+    public static void main(String[] args) {
+        int [] arr= {2,3,2,5,3,7};
+        int c= findUnique(arr);
+        System.out.println(c);
+
+
+    }
 }
