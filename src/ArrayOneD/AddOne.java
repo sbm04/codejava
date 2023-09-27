@@ -33,7 +33,7 @@ public class AddOne {
         ArrayList<Long> ans = new ArrayList<>();
 
         if (countNum == 0) {
-            ans.add(1L); // Handle the case when the input represents zero
+            ans.add(1L);
         } else {
             long ms = (long) Math.pow(10, countNum - 1);
 
@@ -53,7 +53,7 @@ public class AddOne {
         ArrayList<Integer> intList = new ArrayList<>();
 
         for (Long longValue : ans) {
-            intList.add(longValue.intValue()); // Cast Long to Integer and add to the new list
+            intList.add(longValue.intValue());
         }
         return intList;
 
