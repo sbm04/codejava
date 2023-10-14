@@ -19,6 +19,27 @@ public class MaxSumSubArrays {
         return maxSum;
 
     }
+    public static int funBrute1(int arr[]) {
+        int n=arr.length;
+        int maxSum=0;
+        for(int i=0;i<n;i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                for (int k = i; k <= j; k++) {
+                    sum += arr[k];
+
+                }
+                if(sum>maxSum){
+                    maxSum=sum;
+                }
+                sum=0;
+
+            }
+
+        }
+        return maxSum;
+
+    }
     public static int funCarryForward(int arr[]){
         int n=arr.length;
         int maxSum=0;
@@ -26,9 +47,12 @@ public class MaxSumSubArrays {
             int sum = 0;
             for (int j = i; j < n; j++) {
                 sum+=arr[j];
-                //System.out.print(arr[j] +" ");
+                //System.out.print("  arr[j] "+ arr[j] +" ");
+                //System.out.print(" Max -> " + maxSum);
                 maxSum=Math.max(maxSum,sum);
+
             }
+
             System.out.println();
 
         }
@@ -53,7 +77,7 @@ public class MaxSumSubArrays {
 
     public static void main(String[] args) {
             int arr[] = {-2,3,4,-1,5,-10,7};
-            int ans=kadanesAlgo(arr);
+            int ans=funCarryForward(arr);
             System.out.print("Max->"+ans);
     }
 }
