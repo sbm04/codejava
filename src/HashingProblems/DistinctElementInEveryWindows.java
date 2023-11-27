@@ -55,6 +55,44 @@ public class DistinctElementInEveryWindows {
         return al;
 
     }
+
+
+            public ArrayList<Integer> dNums(ArrayList<Integer> arr, int k) {
+                int n=arr.size();
+                ArrayList<Integer> al=new ArrayList<>();
+                HashMap<Integer,Integer> hm = new HashMap<>();
+                for(int i=0;i<n;i++){
+                    if(hm.containsKey(arr.get(i))){
+                        hm.put(arr.get(i),hm.get(arr.get(i))+1);
+                    }
+                    else{
+                        hm.put(arr.get(i),1);
+                    }
+
+                }
+                al.add(hm.size());
+                int s=1,e=k;
+                while(e<n){
+                    hm.put(arr.get(s-1),hm.get(arr.get(s-1))-1);
+                    if(hm.get(arr.get(s-1))==0){
+                        hm.remove(arr.get(s-1));
+                    }
+                    if(hm.containsKey(arr.get(e))){
+                        hm.put(arr.get(e),hm.get(arr.get(e))+1);
+
+                    }
+                    else{
+                        hm.put(arr.get(e),1);
+                    }
+                    al.add(hm.size());
+                    s++;
+                    e++;
+                }
+
+                return al;
+            }
+
+
     public static void main(String[] args) {
         int arr[] = {1,2,1,3,4,2,3};
         ArrayList<Integer> al=fun(arr,4);
